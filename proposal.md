@@ -3,32 +3,37 @@
 
 ### Team Members:
 
-Catie Shelton (cshelto1)
+Catie Shelton (cshelto1) team contact
 Ed Cogan (CopoM5)
 Marina Mitiaeva (marinamitiaeva)
 Abhi Chakraborty (abchakrasyr)
 Jackson Bayuk (JackBCuse)
 
-### Goal: The goal of this machine learning project is to predict the future road conditions of Syracuse, NY, based on weather and road conditions datasets.
+### Goal: The goal of this machine learning project is to predict the future potholes in Syracuse, NY, based on weather, pothole, and other Syracuse Infrastructure datasets.
 
 ### Introduction
 
-In this project, we aim to predict road conditions using data collected from various sources such as weather reports, traffic sensors, and historical accident records. Our objective is to develop a model that can accurately forecast the state of the roads, such as whether they are wet, icy, or clear, to enhance road safety and inform travelers and authorities about potential hazards.
+The goal of this machine learning project is to predict the future potholes of Syracuse, NY based on the weather, potholes and road conditions datasets. This project is novel because it takes three previously unrelated sets of data to predict future infrastructure impacts of Syracuse. If this project is successful, it can help the local government of Syracuse, NY to plan its resources better based on the weather in previous years resulting in improved infrastructure. These data sets are owned by the local Syracuse government and are updated daily for the pothole and weather data sets, and yearly for the road condition dataset.
 
-What sets our approach apart is the integration of diverse data sources and the application of advanced machine learning techniques to capture the complex relationships between weather conditions, traffic patterns, and road states. By leveraging the latest algorithms and computational methods, we anticipate improved accuracy and reliability in our predictions.
+The key player stakeholder of this project is the mayor of Syracuse and his supporting city officials who are responsible for the infrastructure maintenance in Syracuse. 
 
-The significance of this work cannot be overstated. If successful, it will revolutionize road safety by providing timely and accurate information about road conditions, thereby reducing the likelihood of accidents and traffic jams. It will also assist transportation authorities in better managing road maintenance and emergency responses, ultimately saving lives and resources.
+Syracuse University and local citizens are low interest / high power stakeholders because they aren’t closely involved in daily government decisions, but their tax dollars pay for that work. 
+
+The Centro Bus Company is a low power / high interest stakeholder as the health of their assets (buses) are dependent on the quality of the roads they operate on [^1].
+
+[^1]: http://www.ongov.net/dot/highway-paving.html
+
 
 ### Literature Review
 
-The current approach to predicting road conditions primarily relies on historical weather data, traffic patterns, and sensor data from roadways. Traditional methods include using statistical models and rule-based systems to forecast road conditions based on temperature, precipitation, and traffic flow. However, these methods often fall short in accurately predicting complex scenarios, such as rapidly changing weather conditions or unforeseen traffic incidents.
+Today, it is common for meteorologists to use systems such as Road Weather Information Systems (RWIS) in order to get specific, real time data on how roads are being affected by real time weather trends. A RWIS consists of environmental sensor stations that measure atmospheric, pavement, and/or water level conditions. The current road safety information when it comes to weather is strongly based on these three factors. General road weather observations are obtained from national surveillance systems to produce weather watches and warnings for public safety. The National Weather Service (NWS) deploys sensor stations, balloon-borne sensors, Doppler radars, and other technologies to generate national, regional, and county forecasts. As technological advancements are becoming more prevalent the idea of using sensors on snow plows has also become a useful tool of gaging road conditions. Some limits of the current practice is that most of the data on road conditions are collected in real time, however it is important for predictive instances to accumulate data as well as during the precipitation in order to accurately predict how the road will be affected by the incoming weather. 
 
-Recent advancements in machine learning and data analytics have opened up new avenues for road condition prediction. Studies have explored the use of deep learning algorithms, such as Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs), to analyze large datasets and capture the intricate relationships between various factors influencing road conditions. For example, Zhang et al. (2019) utilized a CNN-based model to predict road surface conditions by analyzing weather data and road surface images[^1]. Similarly, Li et al. (2020) proposed an RNN-based approach for real-time road condition forecasting using data from weather stations and traffic sensors[^2].
+Recent advancements in machine learning and data analytics have opened up new avenues for road condition prediction. Studies have explored the use of deep learning algorithms, such as Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs), to analyze large datasets and capture the intricate relationships between various factors influencing road conditions. For example, Zhang et al. (2019) utilized a CNN-based model to predict road surface conditions by analyzing weather data and road surface images[^2]. Similarly, Li et al. (2020) proposed an RNN-based approach for real-time road condition forecasting using data from weather stations and traffic sensors[^3].
 
-Despite these advancements, challenges remain in the integration of diverse data sources, handling of high-dimensional data, and the real-time processing of information. Moreover, the generalization of models across different geographic regions and varying weather conditions is an ongoing area of research.
-
-[^1]: Zhang, Y., et al. (2019). "Road Surface Condition Prediction Using Convolutional Neural Networks." *IEEE Access*, 7, 174929-174938.
-[^2]: Li, X., et al. (2020). "Real-time Road Condition Forecasting Using Recurrent Neural Networks." *Transportation Research Part C: Emerging Technologies*, 111, 83-98.
+[^2]: Zhang, Y., et al. (2019). "Road Surface Condition Prediction Using Convolutional Neural Networks." *IEEE Access*, 7, 174929-174938.
+[^3]: Li, X., et al. (2020). "Real-time Road Condition Forecasting Using Recurrent Neural Networks." *Transportation Research Part C: Emerging Technologies*, 111, 83-98.
+[^4]: https://power.larc.nasa.gov/data-access-viewer/
+[^5]: https://data.syr.gov/
 
 ### Stakeholders:
 
@@ -41,11 +46,11 @@ Low Power / High Interest Stakeholder: The Centro Bus Company, as the quality of
 
 #### Data
 
-The weather dataset was curated from NASA’s website, which focuses on predicting worldwide energy resources through the POWER Data Access Viewer. This tool, available on the website, provides “meteorological and solar data with geospatial capabilities and is designed to aid in the assessment and planning of renewable energy systems”. It outputs neat and organized CSV files (https://power.larc.nasa.gov/data-access-viewer/).
+The weather dataset was curated from NASA’s website, which focuses on predicting worldwide energy resources through the POWER Data Access Viewer. This tool, available on the website, provides “meteorological and solar data with geospatial capabilities and is designed to aid in the assessment and planning of renewable energy systems”. It outputs neat and organized CSV files [^4].
 
 The data was specifically extracted for Syracuse University's location, identified by latitude 43.0345 and longitude -76.1372. The dataset covers the period from November 1, 1983, to November 1, 2023, spanning 40 years and includes 189,943 datapoints (14611r x 13c) of weather data, including Temperature, Dewpoint, Wet Bulb, Humidity, and Precipitation.
 
-In addition to the weather dataset, two other datasets will be used: "Road Ratings" and "Potholes," obtained from the City of Syracuse's Open Data Portal (https://data.syr.gov/).
+In addition to the weather dataset, two other datasets will be used: "Road Ratings" and "Potholes," obtained from the City of Syracuse's Open Data Portal [^5].
 
 Road Ratings: (3675r x 13c)
 
@@ -112,6 +117,8 @@ By following this approach, we aim to develop a robust and interpretable model t
 
 The primary risk in this project is the quality and reliability of the data sources. Inaccuracies or missing data in the weather dataset from NASA or the road-related datasets from the City of Syracuse could significantly impact the effectiveness of the machine learning algorithm. Additionally, changes in data collection methods or environmental factors over the 40-year span of the weather data could introduce biases that may affect the results.
 
+A secondary risk in this project is that the data sets selected will not be sufficient for creating a model. To mitigate this, the team has identified multiple other relevant data sets to be reviewed including the Water Main Break data set and the Syracuse Bike Infrastructure data set.
+
 The complexity of correlating weather variables with road conditions using machine learning techniques also poses a challenge. Machine learning models can be sensitive to the quality and structure of the input data, and any discrepancies or anomalies in the data could lead to inaccurate predictions.
 
-To mitigate these risks, careful evaluation and preprocessing of the data are essential. This includes identifying and addressing any missing or inaccurate data points, as well as considering potential extraneous variables that could influence the results. Additionally, validating the model through various techniques such as cross-validation or holdout validation can help ensure the reliability and accuracy of the predictions.
+To mitigate these risks, the team will evaluate and preprocessing of the data. This includes identifying and addressing any missing or inaccurate data points, as well as considering potential extraneous variables that could influence the results. Additionally, validating the model through various techniques such as cross-validation or holdout validation can help ensure the reliability and accuracy of the predictions.
